@@ -1,0 +1,96 @@
+
+<div id="start-bkg" class="absolute z-1"></div>
+
+<script>
+    import * as THREE from "three";
+
+    let scene, camera, renderer, starGeo, stars;
+
+    function init() {
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(
+            80,
+            window.innerWidth / window.innerHeight,
+            1,
+            1000,
+        );
+        camera.position.z = 1;
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, document.body.scrollHeight +100);
+        document.getElementById("start-bkg").appendChild(renderer.domElement);
+
+        starGeo = new THREE.BufferGeometry();
+        const vertices = [];
+        const size = 10000;
+
+        for (let i = 0; i < 10000; i++) {
+            const x =
+                (Math.random() * size + Math.random() * size) / 2 - size / 2;
+            const y =
+                (Math.random() * size + Math.random() * size) / 2 - size / 2;
+            const z =
+                (Math.random() * size + Math.random() * size) / 2 - size / 2;
+
+            vertices.push(x, y, z);
+        }
+
+        starGeo.setAttribute(
+            "position",
+            new THREE.Float32BufferAttribute(vertices, 3),
+        );
+        starGeo.setAttribute(
+            "velocity",
+            new THREE.Float32BufferAttribute(Array(20000).fill(0), 1),
+        );
+
+        let sprite = new THREE.TextureLoader().load("star.png");
+        let starMaterial = new THREE.PointsMaterial({
+            color: 0xaaaaaa,
+            size: 0.7,
+            map: sprite,
+        });
+
+        stars = new THREE.Points(starGeo, starMaterial);
+        scene.add(stars);
+        animate();
+    }
+
+    function onWindowResize(){
+        camera.aspect = window.innerWidth /window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, document.body.scrollHeight +100);
+    }
+
+    function animate() {
+        const positions = starGeo.getAttribute("position");
+        const velocities = starGeo.getAttribute("velocity");
+
+        for (let i = 0; i < positions.count; i++) {
+            const x = positions.getX(i);
+            let y = positions.getY(i);
+            const z = positions.getZ(i);
+
+            const velocity = velocities.getX(i);
+
+            y -= velocity;
+
+            if (y < -200) {
+                y = 200;
+            }
+
+            positions.setXYZ(i, x, y, z);
+        }
+
+        starGeo.setAttribute("position", positions);
+        stars.rotation.y += 0.002;
+        stars.rotation.x += 0.002;
+        
+        renderer.setClearColor(0x111827);
+        renderer.render(scene, camera);
+
+        requestAnimationFrame(animate);
+    }
+
+    init();
+</script>

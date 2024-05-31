@@ -1,0 +1,130 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Timeline from "../components/Timeline.astro";
+import Menu from "../components/Menu.astro";
+import StarsBackground from "../components/StarsBackground.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+---
+
+<Layout title="Óscar Coleto | portfolio">
+    <main class="relative z-10 h-screen py-8">
+        <div class="flex text-2xl text-white items-end justify-end pr-8">
+            <Breadcrumb title="Career" href="career" />
+        </div>
+        <div class="flex justify-start ml-36 ">
+            <h1 class="text-white text-5xl font-allerta text-neon">Career</h1>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+            <!-- Timeline -->
+            <div>
+                <Timeline
+                    title="Senior Full Stack PHP developer"
+                    date="Jul. 2023 - Apr. 2024"
+                    description="As a developer, I was instrumental in creating a management platform for short- and medium-term rental properties. I worked closely with my supervisor to integrate key APIs such as Hubspot, RMS, Homming, and Google Drive API. I used Laravel (PHP) for the backend, JavaScript for the frontend, and PostgreSQL for the database. Additionally, I utilized various libraries such as AdminLTE, Bootstrap, jQuery, Livewire, Laravel Excel, DataTables, and Spatie to enhance functionality and user experience. Our collaboration was essential to achieving the project's goals in terms of functionality, performance, and security."
+                    company="Caterina House"
+                    logo="/logos/caterina_house_logo.jpg"
+                    href="https://caterina.house/es"
+                />
+
+                <Timeline
+                    title="Senior Full Stack PHP developer"
+                    date="Jan. 2023 - jun. 2023"
+                    description="I Developed new functionalities for the vacation rental portal Rentalia, corrected existing errors, was responsible for integrating the portal yaencontré with Rentalia, and changed Google Analytics 3 to Tealium."
+                    company="AvaiBook Software Alquiler Vacacional by idealista"
+                    logo="/logos/avaibook_logo.jpg"
+                    href="https://www.avaibook.com/"
+                />
+
+                <Timeline
+                    title="Backend PHP developer"
+                    date="Jan. 2022 - Apr. 2022"
+                    description="I refactored and updated to a new version of Laravel, and also implemented the integration with Rydoo. "
+                    company="elrow Family"
+                    logo="/logos/elrow_logo.jpg"
+                    href="https://www.elrow.com/"
+                />
+
+                <Timeline
+                    title="PHP Laravel Full Stack Developer"
+                    date="Jun. 2021 - Dec. 2021"
+                    description="Development of an internal web portal for Waatic's clients, where information obtained from various sensors is displayed and product functionality is enhanced. Portal developed in Laravel, using internal APIs for data synchronization between tablets and desktop versions, and external APIs such as Google Maps or Sigpac.     Implementation process of RabbitMQ for improved real-time synchronization. Use of Bootstrap and JavaScript for visualization and interaction. MySQL used as the database system."
+                    company="Waatic (Grup Estel)"
+                    logo="/logos/waatic_logo.jpg"
+                    href="https://waatic.com/"
+                />
+
+                <Timeline
+                    title="PHP Laravel Full Stack Developer"
+                    date="Dec. 2018 - Mar. 2021"
+                    description="Development lead and web application developer for Énosi (PHP with Laravel framework, JavaScript, and Ajax). The application is responsible for complementing the basic functionalities of the UBW (Agresso) ERP through its APIs. Development of a time tracking application for the company (PHP with Laravel framework, JavaScript, and Ajax). Planning the technical implementation of the UBW ERP within the company. Temporary responsibility for the IT department."
+                    company="BAC Engineering consultancy group (Socotec)"
+                    logo="/logos/socotec_logo.jpg"
+                    href="https://www.socotec.es/en"
+                />
+
+                <Timeline
+                    title="PHP Laravel Full Stack Developer"
+                    date="Nov. 2018 - Dec. 2018"
+                    description="Development of an application with PHP using the Laravel framework for the measurement and control of products on industrial weighing belts."
+                    company="Varpe"
+                    logo="/logos/varpe_logo.jpg"
+                    href="https://www.varpe.es/"
+                />
+
+                <Timeline
+                    title="PHP Laravel Full Stack Developer"
+                    date="Dec. 2017 - Jun. 2018"
+                    description="International support in an application dedicated to audience measurement and control of spaces and advertising appearances. Responsible for application quality control and development of small functionalities for the application."
+                    company="Kantar Media"
+                    logo="/logos/kantar_logo.jpg"
+                    href="https://www.kantar.com/es"
+                />
+
+                <Timeline
+                    title="PHP Laravel Full Stack Developer"
+                    date="Jul. 2017 - Oct. 2017"
+                    description="Development of portals and web pages in C# and ASP with connection to Sage."
+                    company="Sage"
+                    logo="/logos/sage_logo.jpg"
+                    href="https://www.sage.com/"
+                />
+
+                <Timeline
+                    title="Unit4 technical consultant"
+                    date="Jul. 2015 - May 2017"
+                    description="Technical Consultant in UBW (Agresso). Development of custom solutions in C# through ACT (framework), Report development (ACR), Utilization of UBW APIs. Creation of technical documentation, requirement analysis, customer training, and implementation of customized solutions. Export and import of data from XML files. Utilization of SQL Server as the database engine."
+                    company="Unit 4"
+                    logo="/logos/unit4_logo.jpg"
+                    href="https://www.unit4.com/"
+                />
+                <Timeline
+                    title="Web developer"
+                    date="Feb. 2014 - Jul. 2014"
+                    description="Internship developing web components for an ERP in C# with data loading through XML, and collaboration in the development of web pages."
+                    company="RCM Software"
+                    logo="/logos/rcm_logo.jpg"
+                    href="https://www.rcm.es/"
+                />
+                <Timeline
+                    title="Helpdesk Technician"
+                    date="Feb. 2013 - Jun. 2013"
+                    description="Internship in the Service Desk Department and Workshop"
+                    company="Mitsubishi Electric"
+                    logo="/logos/mitsubishi_logo.jpg"
+                    href="https://www.mitsubishielectric.es/"
+                />
+            </div>
+            <!-- End Timeline -->
+        </div>
+    </main>
+</Layout>
+<style>
+    .text-neon {
+        text-shadow: 0 0 20px rgba(0, 255, 195, 0.8);
+    }
+    .border-neon {
+        box-shadow:
+            0px 0px 0px 0px rgba(0, 255, 195) inset,
+            0px 0px 0px 0px rgba(0, 255, 195); /* Amarillo */
+    }
+</style>
