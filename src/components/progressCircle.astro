@@ -47,7 +47,7 @@ const { total } = Astro.props;
             setProgress(progress);
 
             if (progress < 100) {
-                setTimeout(updateProgress, 20);
+                setTimeout(updateProgress, 10);
             }
         }
 
@@ -91,6 +91,7 @@ const { total } = Astro.props;
         position: absolute;
         font-size: 18px;
         font-weight: bold;
+        text-align: center;
         color: white;
         letter-spacing: 0.15em;
     }
