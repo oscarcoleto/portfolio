@@ -4,24 +4,28 @@ import Card2 from "../components/Card2.astro";
 import Card3 from "../components/Card3.astro";
 import ProgressCircle from "../components/progressCircle.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import TechStack from "../components/TechStack.astro";
 ---
 
 <Layout title="Óscar Coleto | portfolio">
   <main class="relative z-10 h-screen py-8">
-    <div class="flex text-2xl text-white items-end justify-end pr-8">
-      <Breadcrumb title="Certificates" href="certificates" />
-    </div>
-    <div class="flex justify-start">
-      <h1 class="text-white text-5xl font-allerta text-neon">
-        Certificates
+    <div class="text-center">
+      <h1 class="text-white text-5xl lg:text-5xl pr-4 font-allerta text-neon">
+        Skills & Certs
       </h1>
     </div>
- 
+    <!-- Primera sección -->
+    <section class="py-8">
+      <h2 class=" text-4xl lg:text-5xl font-allerta text-neon-yellow">  Tech Stack </h2>
+      <div class="flex py-8">
+       <TechStack></TechStack>
+      </div>
+    </section>
     <!-- Segunda sección -->
-    <section class="py-16">
-      <h2 class="text-5xl mb-8">  Aditional Certifications</h2>
+    <section class="py-8">
+      <h2 class="text-4xl lg:text-5xl mb-8 font-allerta text-neon-red">  Aditional Certifications</h2>
       <div class="flex">
-        <ul role="list" class="link-card-grid">
+        <ul role="list" class="grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
           <Card2
             href="https://www.cursosdesarrolloweb.es/course/arquitectura-hexagonal-laravel"
             title="Laravel hexagonal architecture "
@@ -31,9 +35,8 @@ import Breadcrumb from "../components/Breadcrumb.astro";
       </div>
     </section>
     <section class="py-16">
-      <h2 class="text-5xl mb-8"> Academic Certificates</h2>
-      <div class="flex">
-        <ul role="list" class="link-card-grid">
+      <h2 class="text-4xl lg:text-5xl mb-8 font-allerta text-neon-green"> Academic Certificates</h2>
+        <ul role="list" class="grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
           <Card3
             href="https://agora.xtec.cat/ies-sabadell/batxillerats/cicle-formatiu-de-grau-superior-desenvolupament-daplicacions-multiplataforma/"
             title="CFGS Multiplatform applications development"
@@ -54,7 +57,6 @@ import Breadcrumb from "../components/Breadcrumb.astro";
 
         </ul>
     </section>
-    </div>
   </main>
 </Layout>
 
@@ -69,20 +71,29 @@ import Breadcrumb from "../components/Breadcrumb.astro";
     line-height: 1.6;
   }
 
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-    padding: 0;
-  }
-
+  
   .text-neon {
       text-shadow: 0 0 20px rgba(0, 255, 195, 0.8);
+  }
+
+  .text-neon-yellow {
+        text-shadow: 0 0 20px rgba(255, 255, 0, 0.8);
+  }
+  .text-neon-red {
+      text-shadow: 0 0 20px rgba(255, 49, 49, 0.8);
+  }
+  .text-neon-green {
+      text-shadow: 0 0 20px rgba(49, 255, 49, 0.8);
   }
   .border-neon {
       box-shadow:
           0px 0px 0px 0px rgba(0, 255, 195) inset,
           0px 0px 0px 0px rgba(0, 255, 195); /* Amarillo */
+  }
+  .border-neon-red {
+      box-shadow:
+          0px 0px 0px 0px rgba(255, 0, 0) inset,
+          0px 0px 0px 0px rgba(255, 0, 0); /* Amarillo */
   }
 
 </style>

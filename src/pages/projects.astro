@@ -1,8 +1,85 @@
 ---
-import SpainMap from "../components/SpainMap.astro";
-import StarsBackground from "../components/StarsBackground.astro";
 import Layout from "../layouts/Layout.astro";
+import Card4 from "../components/Card4.astro";
+import Card5 from "../components/Card5.astro";
 
 ---
-<StarsBackground></StarsBackground>
-<SpainMap></SpainMap>
+
+<Layout title="Óscar Coleto | portfolio">
+    <main class="relative z-10 h-screen py-8">
+      <div class="text-center">
+        <h1 class="text-white text-5xl lg:text-5xl pr-4 font-allerta text-neon">
+          Projects
+        </h1>
+      </div>
+      <!-- Segunda sección -->
+      <section class="py-8">
+        <h2 class="text-4xl lg:text-5xl mb-8 font-allerta text-neon-blue text-white">  Personal projects </h2>
+        <div class="flex">
+          <ul role="list" class="grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
+            <Card5
+              href=""
+              title="My Portfolio "
+              body="I develop this portfolio with Astro, a static site generator that I love. I have used Tailwind CSS for the styles and I have deployed it on Vercel. Also I used Three.js for the 3D animations."
+            />
+            <Card5
+              href=""
+              title="¿Qué abre hoy?"
+              body="I deveped this web app to know what mall its open in Spain. I used Laravel, Tailwind CSS and Supabase."
+            />
+          </ul>
+        </div>
+      </section>
+      <section class="py-16">
+        <h2 class="text-4xl lg:text-5xl mb-8 font-allerta text-neon-pink text-white"> Latest professional projects</h2>
+          <ul role="list" class="grid lg:grid-cols-3 sm:grid-cols-1 gap-4">
+            <Card4
+              href="https://caterina.house/es"
+              title="Caterina House"
+              body="As a developer, I played a key role in creating a platform for short and medium-term property rental management. I integrated APIs such as Hubspot, RMS, Homming, and Google Drive API. Using Laravel (PHP) for the backend, JavaScript for the frontend, and PostgreSQL for the database, I leveraged libraries like AdminLTE, Bootstrap, jQuery, Livewire, Laravel Excel, DataTables, and Spatie to improve functionality and user experience. Collaboration with my manager was crucial to meeting the project's goals for functionality, performance and security"
+              company="Caterina House"
+              companyUrl="/logos/caterina_house_logo.jpg"
+            />
+  
+            <Card4
+              href="https://es.rentalia.com/"
+              title="Rentalia (Avaibook by idealista)"
+              body="I developed new features for the vacation rental portal Rentalia and fixed existing bugs. I was responsible for integrating the Yaencontré portal with Rentalia. Additionally, I handled the migration from Google Analytics 3 to Tealium. "
+              company="Avaibook"
+              companyUrl="/logos/avaibook_logo.jpg"
+            />
+  
+            <Card4
+              href="https://www.waatic.com/es/"
+              title="Waatic user web platform"
+              body="I develop multiple functionalities in the Waatic web platform, such as good improvements in terms of performance implementing rabbitmq and mongodb, the integration of the Google Maps API, among others."
+              company="Waatic"
+              companyUrl="/logos/waatic_logo.jpg"
+            />
+  
+          </ul>
+      </section>
+    </main>
+  </Layout>
+  <style>
+    main {
+    margin: auto;
+    width: 1024px;
+    padding: 1rem;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .text-neon {
+      text-shadow: 0 0 20px rgba(0, 255, 195, 0.8);
+  }
+  .text-neon-blue {
+      text-shadow: 0 0 20px rgba(51, 0, 255, 0.8);
+  }
+  .text-neon-pink {
+      text-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+  }
+
+  </style>

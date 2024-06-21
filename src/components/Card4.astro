@@ -1,0 +1,84 @@
+---
+interface Props {
+	title: string;
+	body: string;
+	href: string;
+	company: string;
+	companyUrl: string;
+}
+
+const { href, title, body, company, companyUrl } = Astro.props;
+---
+<li class="link-card">
+	<a href={href} target="_blank">
+		<h2>
+			<span class="text-3xl text-purple-300">
+				{title}
+			</span>
+		</h2>
+		<p>
+			{body}
+		</p>
+		<div class="flex items-center mt-auto">
+			<img class="w-10 h-10 rounded-full mr-4" src={companyUrl} alt="Avatar of Jonathan Reinink">
+			<div class="text-sm">
+			  <p class="text-white leading-none">{company}</p>
+			</div>
+		</div>
+	</a>
+</li>
+<style>
+	.link-card {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		padding: 1px;
+		border: 1px solid rgb(255, 0, 225);
+		border-radius: 5px;
+		box-shadow: 0 0 20px 0 rgba(255, 0, 255) inset, 0 0 20px 0 rgba(255, 0, 255);
+	}
+	.link-card:hover {
+		transform: scale(1.15);
+	}
+	.link-card > a {
+		width: 100%;
+		text-decoration: none;
+		line-height: 1.4;
+		padding: calc(1.5rem - 1px);
+		color: white;
+		text-shadow: 0 0 20px rgba(255, 0, 255);
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	h2 {
+		margin: 0;
+		font-size: 1.25rem;
+	}
+	p {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+	}
+	.flex {
+		display: flex;
+		align-items: center;
+	}
+	.items-center {
+		align-items: center;
+	}
+	.mt-auto {
+		margin-top: auto;
+	}
+	.w-10 {
+		width: 2.5rem;
+	}
+	.h-10 {
+		height: 2.5rem;
+	}
+	.rounded-full {
+		border-radius: 9999px;
+	}
+	.mr-4 {
+		margin-right: 1rem;
+	}
+</style>
